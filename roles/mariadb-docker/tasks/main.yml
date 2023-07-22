@@ -1,2 +1,11 @@
 ---
 # tasks file for mariadb-docker
+- name: Pull mariadb:10.6
+  community.docker.docker_image:
+    name: mariadb:10.6
+    source: pull
+    force_source: true
+  register: result
+  until: result is success
+  retries: 5
+  delay: 3
