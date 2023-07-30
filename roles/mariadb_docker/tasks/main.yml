@@ -1,0 +1,7 @@
+---
+# tasks file for mariadb_docker
+- name: Pull mariadb image via docker
+  community.docker.docker_image:
+    name: mariadb:10.6
+    source: pull
+

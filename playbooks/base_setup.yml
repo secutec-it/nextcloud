@@ -1,0 +1,22 @@
+---
+- hosts: nextclouds
+  tasks:
+    - name: Include Docker role
+      ansible.builtin.include_role:
+        name: secutec_it.cloudserver.docker
+    - name: Include firewall role
+      ansible.builtin.include_role:
+        name: secutec_it.cloudserver.firewall
+    - name: Include fail2ban role
+      ansible.builtin.include_role:
+        name: secutec_it.cloudserver.fail2ban
+    - name: Include traefik role
+      ansible.builtin.include_role:
+        name: secutec_it.cloudserver.traefik
+    - name: Include Nextcloud MariaDB role
+      ansible.builtin.include_role:
+        name: secutec_it.nextcloud.mariadb_docker    
+    - name: Include Nextcloud Apache role
+      ansible.builtin.include_role:
+        name: secutec_it.nextcloud.nextcloud_apache_docker
+

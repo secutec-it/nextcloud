@@ -1,0 +1,8 @@
+---
+# tasks file for nextcloud_apache_docker
+- name: Pull Nextcloud Apache image via docker
+  community.docker.docker_image:
+    name: nextcloud:stable
+    source: pull
+
+
